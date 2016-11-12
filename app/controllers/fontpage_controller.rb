@@ -1,0 +1,2 @@
+class FontpageController < ApplicationController
+end

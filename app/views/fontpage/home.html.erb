@@ -1,0 +1,254 @@
+<% if user_signed_in? %>
+<%= link_to "Cerrar Sesion", destroy_user_session_path %>
+<%end%>
+
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-md-3">
+
+      <div class="panel panel-default panel-profile m-b-md hidden-xs">
+        <div class="panel-heading" style="background-image: url(assets/img/newport.jpeg);"></div>
+        <div class="panel-body text-center">
+          <a href="profile/index.html">
+            <img
+              class="panel-profile-img"
+              src="/assets/adrian.jpg">
+          </a>
+
+          <h5 class="panel-title">
+            <a class="text-inherit" href="profile/index.html">Adrian Fisher</a>
+          </h5>
+          <p><a href="progress.html">184.5 LBS</a></p>
+          <p><span class="dynamicsparkline"></span></p>
+
+
+          <p class="m-b-md">I wish i was not as fat.</p>
+
+          <ul class="panel-menu">
+          <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Updates
+                <h5 class="m-y-0">2</h5>
+              </a>
+            </li>
+
+            <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Friends
+                <h5 class="m-y-0">2</h5>
+              </a>
+            </li>
+
+            <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Followers
+                <h5 class="m-y-0">1</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+    <div class="panel panel-default m-b-md">
+    <div class="panel-heading">
+      <button type="button" class="btn btn-xs btn-pill btn-primary"><span class="icon icon-chat"></span> Banter</button>
+      <a href="home-wi.html" class="btn btn-xs btn-pill btn-default"><span class="icon icon-gauge"></span> Weigh In</a>
+
+    </div>
+        <div class="panel-body">
+        <ul class="media-list media-list-stream">
+          <li class="media m-b">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="/assets/adrian.jpg">
+            </a>
+            <div class="media-body">
+              <p><strong>Adrian Fisher</strong> @fatadrian</p>
+              <textarea class="form-control" rows="3" placeholder="What's on your mind?"></textarea>
+            </div>
+          </li>
+
+        </ul>
+        </div>
+        <div class="panel-footer">
+          <ul class="nav nav-pills">
+            <li role="presentation"><a href="#"><span class="icon icon-images"></span> Add Images</a></li>
+            <li role="presentation" class="active pull-right"><a href="#"><span class="icon icon-up"></span> Post</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <ul class="list-group media-list media-list-stream">
+
+        <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img
+              class="media-object img-circle"
+              src="assets/img/ken.jpg">
+          </a>
+          <div class="media-body">
+            <div class="media-heading">
+              <small class="pull-right text-muted">4 min</small>
+              <h5>Ken Martone</h5>
+            </div>
+
+            <p>
+              <a href="">Nate</a> you are getting a bit skinner. Just kidding. Check out this photo I found of you before you were fat. #fatcamp #paybackdiabeteschallange
+            </p>
+
+            <div class="media-body-inline-grid" data-grid="images">
+              <div style="display: none">
+                <img data-action="zoom" data-width="280" data-height="280" src="/assets/nate.jpg">
+              </div>
+
+            </div>
+
+            <ul class="media-list m-b">
+              <li class="media">
+                <a class="media-left" href="#">
+                  <img
+                    class="media-object img-circle"
+                    src="/assets/adrian.jpg">
+                </a>
+                <div class="media-body">
+                  <strong>Adrian Fisher: </strong>
+                  Lol. Skinny Nate. #diabeteschallange
+                </div>
+              </li>
+              <li class="media">
+                <a class="media-left" href="#">
+                  <img
+                    class="media-object img-circle"
+                    src="assets/img/avatar-mdo.png">
+                </a>
+                <div class="media-body">
+                  <strong>Mark Otto: </strong>
+                  Whats the Diabetes Challange?
+                </div>
+              </li>
+              <li class="media">
+                <a class="media-left" href="#">
+                  <img
+                    class="media-object img-circle"
+                    src="/assets/adrian.jpg">
+                </a>
+                <div class="media-body">
+                  <strong>Adrian Fisher: </strong>
+                  Don't ask. #diabeteschallange
+                </div>
+              </li>
+            </ul>
+            <p><a href="">leave comment <span class="icon icon-triangle-down"></span></a></p>
+            <div class="panel panel-default m-b-md">
+              <div class="panel-body">
+              <ul class="media-list media-list-stream">
+                <li class="media">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Comment...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="icon icon-images"></span></button>
+                      <button class="btn btn-default" type="button">Post</button>
+                    </span>
+                  </div><!-- /input-group -->
+                </li>
+              </ul>
+              </div>
+            </div>
+
+          </div>
+        </li>
+
+        <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img
+              class="media-object img-circle"
+              src="/assets/nate.jpg">
+          </a>
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">12 min</small>
+                <h5>Nathan Lustig</h5>
+              </div>
+              <p>
+                We are still all so fat. Ate tacos all day. I'm a mexican. Build a wall around me now.
+              </p>
+            </div>
+            <p><a href="">leave comment <span class="icon icon-triangle-up"></span></a></p>
+          </div>
+        </li>
+
+        <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img
+              class="media-object img-circle"
+              src="/assets/nate.jpg">
+          </a>
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">22 min</small>
+                <h5>Nathan Lustig</h5>
+              </div>
+              <h1><span class="icon icon-gauge"></span> 180 LBS</h1>
+              <p>
+                I lost a pound.
+              </p>
+            </div>
+            <p><a href="">leave comment <span class="icon icon-triangle-up"></span></a></p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="panel panel-default m-b-md hidden-xs">
+        <div class="panel-body">
+        <h5 class="m-t-0">Friends</h5>
+        <ul class="media-list media-list-stream">
+          <li class="media m-b">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="/assets/nate.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Nate Lustig</strong> @fatnate
+              <div class="media-body-actions">
+                <button class="btn btn-primary-outline btn-sm">
+                  <span class="icon icon-check"></span> Friends</button>
+              </div>
+            </div>
+          </li>
+           <li class="media">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="assets/img/ken.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Ken Martone</strong> @fatken
+              <div class="media-body-actions">
+                <button class="btn btn-primary-outline btn-sm">
+                  <span class="icon icon-check"></span> Friends</button></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="panel-footer">
+          See whats new with your followers.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

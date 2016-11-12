@@ -1,0 +1,28 @@
+<% provide(:title, "Confirmation instructions") %>
+<div class="container-fluid container-fill-height">
+  <div class="container-content-middle">
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post,class: "m-x-auto text-center app-login-form", role: "form" }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <a href="" class="app-brand m-b-md">
+        <img src="/assets/fatcamp-logo.png" alt="brand">
+  </a>
+
+  <h3>Resend confirmation instructions</h3>
+
+  <div class="form-group m-b-md">
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control", placeholder: "Email" %>
+  </div>
+
+  <div class="m-b-lg">
+    <%= f.submit "Resend confirmation instructions", class: "btn btn-primary" %>
+  </div>
+
+  <footer class="screen-login">
+    <%= render "users/shared/links" %>
+  </footer>
+<% end %>
+
+</div>
+</div>
