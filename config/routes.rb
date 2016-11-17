@@ -4,8 +4,12 @@ devise_for :users, controllers: {
       }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'fontpage#home'
+  root 'users#home'
 
-  resources :users
+  resources :users do
+  	resources :posts do
+  		resources :comments
+  	end
+  end
 
 end

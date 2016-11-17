@@ -1,0 +1,149 @@
+<% if user_signed_in? %>
+<%= link_to "Cerrar Sesion", destroy_user_session_path %>
+<%end%>
+
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-md-3">
+
+      <div class="panel panel-default panel-profile m-b-md hidden-xs">
+        <div class="panel-heading" style="background-image: url(assets/img/newport.jpeg);"></div>
+        <div class="panel-body text-center">
+          <a href="profile/index.html">
+            <% if @user.profile.nil? %>
+                <img src="/assets/generic.jpg" class="panel-profile-img" >
+              <% else %>
+                <%= image_tag @user.profile.url, class: "panel-profile-img" %>
+            <% end %>
+          </a>
+
+          <h5 class="panel-title">
+            <a class="text-inherit" href="profile/index.html"><%= @user.name %></a>
+          </h5>
+          <p><a href="progress.html">184.5 LBS</a></p>
+          <p><span class="dynamicsparkline"></span></p>
+
+
+          <p class="m-b-md"><%= @user.about %></p>
+
+          <ul class="panel-menu">
+          <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Updates
+                <h5 class="m-y-0"><%= @user.posts.count %></h5>
+              </a>
+            </li>
+
+            <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Friends
+                <h5 class="m-y-0">2</h5>
+              </a>
+            </li>
+
+            <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" data-toggle="modal">
+                Followers
+                <h5 class="m-y-0">1</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+    <div class="panel panel-default m-b-md">
+    <div class="panel-heading">
+      <button type="button" class="btn btn-xs btn-pill btn-primary"><span class="icon icon-chat"></span> Banter</button>
+      <a href="home-wi.html" class="btn btn-xs btn-pill btn-default"><span class="icon icon-gauge"></span> Weigh In</a>
+
+    </div>
+      
+      <div class="panel-body">
+        <ul class="media-list media-list-stream">
+          <li class="media m-b">
+            <a class="media-left" href="#">
+            <% if @user.profile.nil? %>
+                <img src="/assets/generic.jpg" class="media-object img-circle" >
+              <% else %>
+                <%= image_tag @user.profile.url, class: "media-object img-circle" %>
+            <% end %>
+            </a>
+            <div class="media-body">
+              <p><strong><%= @user.name %></strong> @<%= @user.hashtag %></p>
+              <%= form_for([@user, @user.posts.build]) do |f| %>
+              <%= f.text_area :content, class: "form-control", placeholder: "What's on your mind?", rows: "3" %>
+            </div>
+          </li>
+
+        </ul>
+        </div>
+        <div class="panel-footer">
+          <ul class="nav nav-pills">
+            <li role="presentation"><span class="icon icon-images">
+              <%= f.label :photo, "Add Image" %>
+              <%= f.file_field :photo %>
+              </span>
+            </li>
+            <li role="presentation" class="active pull-right"><span class="icon icon-up"></span><%= f.submit "Post", class: "" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="list-group media-list media-list-stream">
+
+        <% unless @user.posts.count == 0%>
+          <%= render @user.posts %>
+        <% end %>
+
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="panel panel-default m-b-md hidden-xs">
+        <div class="panel-body">
+        <h5 class="m-t-0">Friends</h5>
+        <ul class="media-list media-list-stream">
+          <li class="media m-b">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="/assets/nate.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Nate Lustig</strong> @fatnate
+              <div class="media-body-actions">
+                <button class="btn btn-primary-outline btn-sm">
+                  <span class="icon icon-check"></span> Friends</button>
+              </div>
+            </div>
+          </li>
+           <li class="media">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="assets/img/ken.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Ken Martone</strong> @fatken
+              <div class="media-body-actions">
+                <button class="btn btn-primary-outline btn-sm">
+                  <span class="icon icon-check"></span> Friends</button></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="panel-footer">
+          See whats new with your followers.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
