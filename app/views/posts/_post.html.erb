@@ -1,10 +1,6 @@
         <li class="media list-group-item p-a">
           <a class="media-left" href="#">
-            <% if post.user.profile.nil? %>
-                <img class="media-object img-circle" src="/assets/generic.jpg">
-              <% else %>
-                <%= image_tag post.user.profile.url, class: "media-object img-circle" %>
-            <% end %>
+            <%= image_tag post.user.profile.url, class: "media-object img-circle" %>
           </a>
           <div class="media-body">
             <div class="media-heading">
@@ -28,20 +24,20 @@
               <% end %>
 
             </ul>
-            <p><%= form_for([post, post.comments.build]) do |f| %>
+            <p><%# form_for([@post, @post.comment.build]) do |f| %>
             <a href="">leave comment <span class="icon icon-triangle-down"></span></a></p>
             <div class="panel panel-default m-b-md">
               <div class="panel-body">
               <ul class="media-list media-list-stream">
                 <li class="media">
                   <div class="input-group">
-                    <%= f.text_field :content, class: "form-control", placeholder: "Comment..." %>
+                    <%# f.text_field :content, class: "form-control", placeholder: "Comment..." %>
                     <input type="text" class="form-control" placeholder="Comment...">
                     <span class="input-group-btn">
                       <!-- FORM BUTTON --><button class="btn btn-default" type="button"><span class="icon icon-images"></span></button>
                       <button class="btn btn-default" type="button">Post</button>
                     </span>
-                    <% end %>
+                    <%# end %>
                   </div><!-- /input-group -->
                 </li>
               </ul>

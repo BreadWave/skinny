@@ -15,7 +15,7 @@
     </title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-
+    
     <link href="/assets/application.css" rel="stylesheet">
 
     <style>
@@ -30,7 +30,10 @@
 
   </head>
 
+
 <body class="with-top-navbar">
+
+
 
 <div class="growl" id="app-growl"></div>
 
@@ -64,7 +67,7 @@
         <ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">
           <li>
             <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
-                <img class="img-circle" src="/assets/generic.jpg">
+              <%= image_tag current_user.profile.url, class: "img-circle" %>
             </button>
           </li>
         </ul>

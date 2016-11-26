@@ -4,7 +4,7 @@ devise_for :users, controllers: {
       }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#home'
+  root 'users#show'
 
   resources :users do
   	resources :posts do

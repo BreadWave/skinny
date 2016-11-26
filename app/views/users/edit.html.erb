@@ -4,17 +4,11 @@
 
       <div class="panel panel-default panel-profile m-b-md hidden-xs">
         <div class="panel-heading">
-          <% if @user.cover.small.nil? %>
             <%= image_tag @user.cover.small.url %>
-          <%end%>
         </div>
         <div class="panel-body text-center">
           <a href="profile/index.html">
-          <% if @user.profile.nil? %>
-            <img class="panel-profile-img" src="/assets/generic.jpg">
-          <% else %>
-            <%= image_tag @user.profile.url, class: "panel-profile-img" %>
-          <%end%>
+            <%= image_tag @user.profile.mini.url, class: "panel-profile-img" %>
           </a>
 
           <h5 class="panel-title">

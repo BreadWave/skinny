@@ -23,8 +23,4 @@ class CommentsController < ApplicationController
 		
 	end
 
-	def set_author
-		@comment.author = @post.author
-		@comment.profile = @post.profile
-	end
 end

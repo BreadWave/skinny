@@ -3,18 +3,17 @@
 <%end%>
 
 <div class="container p-t-md">
+<div class="container p-t-md">
   <div class="row">
     <div class="col-md-3">
 
       <div class="panel panel-default panel-profile m-b-md hidden-xs">
-        <div class="panel-heading" style="background-image: url(assets/img/newport.jpeg);"></div>
+        <div class="panel-heading">
+          <%= image_tag @user.cover.small.url %>
+        </div>
         <div class="panel-body text-center">
           <a href="profile/index.html">
-            <% if @user.profile.nil? %>
-                <img src="/assets/generic.jpg" class="panel-profile-img" >
-              <% else %>
-                <%= image_tag @user.profile.url, class: "panel-profile-img" %>
-            <% end %>
+            <%= image_tag @user.profile.mini.url, class: "panel-profile-img" %>
           </a>
 
           <h5 class="panel-title">
@@ -66,14 +65,10 @@
         <ul class="media-list media-list-stream">
           <li class="media m-b">
             <a class="media-left" href="#">
-            <% if @user.profile.nil? %>
-                <img src="/assets/generic.jpg" class="media-object img-circle" >
-              <% else %>
-                <%= image_tag @user.profile.url, class: "media-object img-circle" %>
-            <% end %>
+              <%= image_tag current_user.profile.url, class: "media-object img-circle" %>
             </a>
             <div class="media-body">
-              <p><strong><%= @user.name %></strong> @<%= @user.hashtag %></p>
+              <p><strong><%= current_user.name %></strong> @<%= current_user.hashtag %></p>
               <%= form_for([@user, @user.posts.build]) do |f| %>
               <%= f.text_area :content, class: "form-control", placeholder: "What's on your mind?", rows: "3" %>
             </div>
